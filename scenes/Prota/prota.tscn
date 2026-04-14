@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://crrt3ur141nq1"]
+
+[ext_resource type="Script" uid="uid://bmdi3jjtj7dgl" path="res://scripts/Prota/Prota.cs" id="1_ociqq"]
+[ext_resource type="Texture2D" uid="uid://b15tb53uwryol" path="res://icon.svg" id="1_pj6qm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ociqq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pj6qm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_owpfm"]
+
+[node name="Prota" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_ociqq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.15, 0.15)
+sprite_frames = SubResource("SpriteFrames_ociqq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_owpfm")
