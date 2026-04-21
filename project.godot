@@ -27,11 +27,16 @@ project/assembly_name="After me"
 
 folder_colors={
 "res://assets/Ghost/": "red",
+"res://assets/Objects/": "orange",
+"res://assets/Objects/Button/": "orange",
+"res://assets/Objects/Door/": "orange",
 "res://scenes/Ghost/": "red",
 "res://scenes/Maps/": "gray",
+"res://scenes/Objects/": "orange",
 "res://scenes/Prota/": "blue",
 "res://scenes/UI/": "green",
 "res://scripts/Ghost/": "red",
+"res://scripts/Objetos/": "orange",
 "res://scripts/Prota/": "blue",
 "res://scripts/UI/": "green"
 }
