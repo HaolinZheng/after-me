@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://crrt3ur141nq1"]
+[gd_scene format=3 uid="uid://crrt3ur141nq1"]
 
 [ext_resource type="Script" uid="uid://bmdi3jjtj7dgl" path="res://scripts/Prota/Prota.cs" id="1_ociqq"]
 [ext_resource type="Texture2D" uid="uid://b15tb53uwryol" path="res://icon.svg" id="1_pj6qm"]
+[ext_resource type="PackedScene" uid="uid://cpxbngtdiji3l" path="res://scenes/Ghost/ghost.tscn" id="2_a8mum"]
+[ext_resource type="Script" uid="uid://b8qwr14kt87c6" path="res://scripts/Prota/InputRecorder.cs" id="3_owpfm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ociqq"]
 animations = [{
@@ -16,13 +18,17 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_owpfm"]
 
-[node name="Prota" type="CharacterBody2D"]
+[node name="Prota" type="CharacterBody2D" unique_id=1319834570]
 collision_layer = 2
 script = ExtResource("1_ociqq")
+GhostScene = ExtResource("2_a8mum")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=102076353]
 scale = Vector2(0.15, 0.15)
 sprite_frames = SubResource("SpriteFrames_ociqq")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1040059661]
 shape = SubResource("RectangleShape2D_owpfm")
+
+[node name="InputRecorder" type="Node" parent="." unique_id=1945210457]
+script = ExtResource("3_owpfm")
