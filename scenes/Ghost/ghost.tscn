@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://cpxbngtdiji3l"]
+
+[ext_resource type="Script" uid="uid://dylyaysp6a4ju" path="res://scripts/Ghost/GhostController.cs" id="1_07bio"]
+[ext_resource type="Shader" uid="uid://pxvfq8e2tbm8" path="res://assets/Ghost/ghost.gdshader" id="2_j1dr3"]
+[ext_resource type="Texture2D" uid="uid://b15tb53uwryol" path="res://icon.svg" id="3_mm21v"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ag8l5"]
+shader = ExtResource("2_j1dr3")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kfmbn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_mm21v")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_60is2"]
+
+[node name="Ghost" type="CharacterBody2D" unique_id=23711243]
+collision_layer = 4
+script = ExtResource("1_07bio")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1870889201]
+material = SubResource("ShaderMaterial_ag8l5")
+scale = Vector2(0.15, 0.15)
+sprite_frames = SubResource("SpriteFrames_kfmbn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=306681578]
+shape = SubResource("RectangleShape2D_60is2")
