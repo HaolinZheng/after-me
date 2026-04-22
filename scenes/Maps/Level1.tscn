@@ -4,20 +4,19 @@
 [ext_resource type="PackedScene" uid="uid://crrt3ur141nq1" path="res://scenes/Prota/prota.tscn" id="2_2cr1h"]
 [ext_resource type="PackedScene" uid="uid://cd0rcqax5b26l" path="res://scenes/UI/cronometro.tscn" id="3_7v2t8"]
 [ext_resource type="FontFile" uid="uid://ch085uvw7anjv" path="res://assets/pixeldu.ttf" id="4_m7oxf"]
+[ext_resource type="PackedScene" uid="uid://uih064wu2qmm" path="res://scenes/Objects/Door/door.tscn" id="5_k7fsl"]
+[ext_resource type="PackedScene" uid="uid://bu0igsuk823ty" path="res://scenes/Objects/Button/button.tscn" id="6_3yjpc"]
 
 [sub_resource type="Theme" id="Theme_aoy6n"]
 default_font = ExtResource("4_m7oxf")
 
 [node name="Level1" type="Node2D" unique_id=996602970]
 
-[node name="Level 1" parent="." unique_id=1800318930 instance=ExtResource("1_u3yv4")]
+[node name="Level 1" parent="." unique_id=1097211362 instance=ExtResource("1_u3yv4")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=92413896]
 position = Vector2(90, 51)
 zoom = Vector2(6.5, 6.5)
-
-[node name="Prota" parent="." unique_id=1319834570 instance=ExtResource("2_2cr1h")]
-position = Vector2(36, 73)
 
 [node name="GhostContainer" type="Node" parent="." unique_id=610578012]
 
@@ -36,14 +35,23 @@ _maxTime = 10
 
 [node name="CanvasGroup" type="CanvasGroup" parent="." unique_id=865134521]
 position = Vector2(40, 49)
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.4, 0.5)
 
 [node name="Label" type="Label" parent="CanvasGroup" unique_id=1958033265]
 texture_filter = 3
-offset_left = 1.6666666
-offset_top = 1.6666666
-offset_right = 16.666666
-offset_bottom = 17.666666
+offset_left = 2.0000024
+offset_top = 4.0000024
+offset_right = 17.000002
+offset_bottom = 20.000002
 theme = SubResource("Theme_aoy6n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "01"
+
+[node name="Door" parent="." unique_id=1887943461 instance=ExtResource("5_k7fsl")]
+position = Vector2(155, 75)
+
+[node name="Button" parent="." unique_id=1977466510 instance=ExtResource("6_3yjpc")]
+position = Vector2(65, 75)
+
+[node name="Prota" parent="." unique_id=1319834570 instance=ExtResource("2_2cr1h")]
+position = Vector2(46, 72)

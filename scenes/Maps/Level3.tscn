@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://cxar3l5it5jjv"]
+
+[ext_resource type="PackedScene" uid="uid://crgmn2nakpwb8" path="res://scenes/Maps/Level 3.tmx" id="1_qap6u"]
+[ext_resource type="PackedScene" uid="uid://cd0rcqax5b26l" path="res://scenes/UI/cronometro.tscn" id="2_lx165"]
+[ext_resource type="FontFile" uid="uid://ch085uvw7anjv" path="res://assets/pixeldu.ttf" id="3_iexcm"]
+[ext_resource type="PackedScene" uid="uid://uih064wu2qmm" path="res://scenes/Objects/Door/door.tscn" id="4_1qlst"]
+[ext_resource type="PackedScene" uid="uid://bu0igsuk823ty" path="res://scenes/Objects/Button/button.tscn" id="5_qhdcr"]
+[ext_resource type="PackedScene" uid="uid://crrt3ur141nq1" path="res://scenes/Prota/prota.tscn" id="6_wel0h"]
+
+[sub_resource type="Theme" id="Theme_aoy6n"]
+default_font = ExtResource("3_iexcm")
+
+[node name="Level3" type="Node2D" unique_id=996602970]
+
+[node name="Level 3" parent="." unique_id=2022367857 instance=ExtResource("1_qap6u")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=92413896]
+position = Vector2(90, 51)
+zoom = Vector2(6.5, 6.5)
+
+[node name="GhostContainer" type="Node" parent="." unique_id=610578012]
+
+[node name="Cronometro" parent="." unique_id=604631755 node_paths=PackedStringArray("_prota") instance=ExtResource("2_lx165")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 80.0
+offset_top = 30.0
+offset_right = 80.0
+offset_bottom = 30.0
+grow_horizontal = 1
+grow_vertical = 1
+_prota = NodePath("../Prota")
+_maxTime = 10
+
+[node name="CanvasGroup" type="CanvasGroup" parent="." unique_id=865134521]
+position = Vector2(40, 49)
+scale = Vector2(0.4, 0.5)
+
+[node name="Label" type="Label" parent="CanvasGroup" unique_id=1958033265]
+texture_filter = 3
+offset_left = 2.4999967
+offset_top = 4.0000024
+offset_right = 25.499996
+offset_bottom = 20.000002
+theme = SubResource("Theme_aoy6n")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "03"
+
+[node name="Door" parent="." unique_id=1887943461 instance=ExtResource("4_1qlst")]
+position = Vector2(155, 75)
+
+[node name="Button" parent="." unique_id=1977466510 instance=ExtResource("5_qhdcr")]
+position = Vector2(55, 75)
+
+[node name="Prota" parent="." unique_id=1319834570 instance=ExtResource("6_wel0h")]
+position = Vector2(46, 72)
