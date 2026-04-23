@@ -23,6 +23,12 @@ animations = [{
 [node name="Ghost" type="CharacterBody2D" unique_id=23711243]
 collision_layer = 4
 script = ExtResource("1_07bio")
+<<<<<<< Updated upstream
+=======
+Speed = 40.0
+JumpForce = -140.0
+Gravity = 500.0
+>>>>>>> Stashed changes
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1870889201]
 material = SubResource("ShaderMaterial_ag8l5")

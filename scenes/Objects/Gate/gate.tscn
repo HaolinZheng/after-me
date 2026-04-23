@@ -32,7 +32,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uyn0f"]
 size = Vector2(10, 4)
 
-[node name="Gate" type="Area2D" unique_id=1887943461]
+[node name="Gate" type="StaticBody2D" unique_id=1891262855]
+collision_mask = 0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=977368547]
 texture_filter = 1

@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bu0igsuk823ty"]
 
+[ext_resource type="Script" uid="uid://b5pe4yajx3xkk" path="res://scripts/Objetos/Button/LevelButton.cs" id="1_35vdl"]
 [ext_resource type="Texture2D" uid="uid://bbgeirankw673" path="res://assets/Objects/Button/Button.png" id="1_uijk2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p1o0a"]
@@ -30,9 +31,14 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_35vdl"]
-size = Vector2(8, 4)
+size = Vector2(10, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uijk2"]
+size = Vector2(8, 2)
 
 [node name="Button" type="Area2D" unique_id=1887943461]
+collision_mask = 2
+script = ExtResource("1_35vdl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=977368547]
 texture_filter = 1
@@ -40,5 +46,24 @@ sprite_frames = SubResource("SpriteFrames_aluoa")
 animation = &"unpress"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=632351036]
-position = Vector2(0, 3)
+position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_35vdl")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1505821932]
+collision_layer = 8
+collision_mask = 6
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=266984996]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_uijk2")
+debug_color = Color(0.9882353, 0, 0.3254902, 0.41960785)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=767340933]
+position = Vector2(0, 2)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1348664066]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_35vdl")
+
+[connection signal="body_entered" from="Area2D" to="." method="OnBodyEntered"]
+[connection signal="body_exited" from="Area2D" to="." method="OnBodyExited"]

@@ -41,6 +41,10 @@ folder_colors={
 "res://scripts/UI/": "green"
 }
 
+[global_group]
+
+level_buttons=""
+
 [input]
 
 ui_left={
@@ -86,6 +90,7 @@ Reset={
 2d_physics/layer_1="Mapa"
 2d_physics/layer_2="Prota"
 2d_physics/layer_3="Ghosts"
+2d_physics/layer_4="Interactuables"
 
 [rendering]
 

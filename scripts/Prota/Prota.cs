@@ -5,7 +5,6 @@ using System.Dynamic;
 using System;
 
 namespace afterMe.scripts.Prota;
-
 public partial class Prota : CharacterBody2D
 {
     [Export] public float Speed = 200f;
@@ -13,16 +12,17 @@ public partial class Prota : CharacterBody2D
     [Export] public float Gravity = 980f;
     [Export] public float RespawnTime = 10.0f;  // tiempo para auto-reset
     [Export] public float ActionDelay = 0.5f;  // tiempo quieto tras reset
-
     [Export] public PackedScene GhostScene;
+    
+    [Signal] public delegate void PlayerStartedMovingEventHandler();
 
     private bool _reseteable = false;
     private bool _canMove = false;
+    public bool levelCleared = false;
     private Vector2 _startPosition;
     private Vector2 _velocity = Vector2.Zero;
     private InputRecorder _recorder;
     private Node _ghostContainer;
-
     private SceneTreeTimer _respawnTimer;
     private SceneTreeTimer _actionTimer;
 
@@ -98,7 +98,6 @@ public partial class Prota : CharacterBody2D
     {
         if (GhostScene == null)
         {
-            GD.PrintErr("Asigna GhostScene en el inspector del Player.");
             return;
         }
 

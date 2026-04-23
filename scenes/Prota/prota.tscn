@@ -18,9 +18,16 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_owpfm"]
 
-[node name="Prota" type="CharacterBody2D" unique_id=1319834570]
+[node name="Prota" type="CharacterBody2D" unique_id=1319834570 groups=["player"]]
 collision_layer = 2
+collision_mask = 9
 script = ExtResource("1_ociqq")
+<<<<<<< Updated upstream
+=======
+Speed = 40.0
+JumpVelocity = -140.0
+Gravity = 500.0
+>>>>>>> Stashed changes
 GhostScene = ExtResource("2_a8mum")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=102076353]
