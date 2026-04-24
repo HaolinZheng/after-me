@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://eyrfwkchaqlj"]
 
+[ext_resource type="Script" uid="uid://44vg2ab38aq6" path="res://scripts/Objetos/Gate/LevelGate.cs" id="1_ei6ig"]
 [ext_resource type="Texture2D" uid="uid://tx84v77lp4bt" path="res://assets/Objects/Gate/Gate.png" id="1_qars5"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ei6ig"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ei6ig"]
 atlas = ExtResource("1_qars5")
@@ -32,8 +35,12 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uyn0f"]
 size = Vector2(10, 4)
 
-[node name="Gate" type="StaticBody2D" unique_id=1891262855]
+[node name="Gate" type="StaticBody2D" unique_id=1891262855 node_paths=PackedStringArray("_sprite", "_collision")]
 collision_mask = 0
+physics_material_override = SubResource("PhysicsMaterial_ei6ig")
+script = ExtResource("1_ei6ig")
+_sprite = NodePath("AnimatedSprite2D")
+_collision = NodePath("CollisionShape2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=977368547]
 texture_filter = 1
@@ -43,3 +50,4 @@ animation = &"desactive"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=632351036]
 position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_uyn0f")
+disabled = true

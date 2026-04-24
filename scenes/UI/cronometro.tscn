@@ -1,32 +1,41 @@
 [gd_scene format=3 uid="uid://cd0rcqax5b26l"]
 
 [ext_resource type="Script" uid="uid://bitvx6o56kpap" path="res://scripts/UI/Cronometro.cs" id="1_hi0de"]
+[ext_resource type="Texture2D" uid="uid://br3ku62a3tr6q" path="res://assets/Timer.png" id="2_fmdx4"]
+[ext_resource type="FontFile" uid="uid://ch085uvw7anjv" path="res://assets/pixeldu.ttf" id="3_hj7i6"]
+
+[sub_resource type="Theme" id="Theme_copc0"]
+default_font = ExtResource("3_hj7i6")
 
 [node name="Cronometro" type="Control" unique_id=604631755 node_paths=PackedStringArray("_label")]
+texture_filter = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -1132.0
+offset_bottom = -638.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hi0de")
-_label = NodePath("CanvasLayer/MarginContainer/VBoxContainer/Panel/Label")
+_label = NodePath("Sprite2D/Panel/Label")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1516099645]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1917219093]
+texture_filter = 3
+position = Vector2(10, 5)
+texture = ExtResource("2_fmdx4")
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=1080329379]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Panel" type="PanelContainer" parent="Sprite2D" unique_id=1080523181]
+texture_filter = 3
+offset_left = -7.96
+offset_top = -3.525
+offset_right = 34.597137
+offset_bottom = 17.746428
+scale = Vector2(0.35, 0.35)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer" unique_id=500603296]
+[node name="Label" type="Label" parent="Sprite2D/Panel" unique_id=730182121]
+texture_filter = 3
 layout_mode = 2
-
-[node name="Panel" type="PanelContainer" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=1080523181]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer/Panel" unique_id=730182121]
-layout_mode = 2
-horizontal_alignment = 1
+theme = SubResource("Theme_copc0")
+horizontal_alignment = 2
+vertical_alignment = 1

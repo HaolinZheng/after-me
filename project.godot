@@ -15,13 +15,21 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="After me"
-run/main_scene="uid://bc84gv7u7e4x0"
+run/main_scene="uid://c27vw3ohqewrd"
 config/features=PackedStringArray("4.6", "C#", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GhostMemory="*uid://dkmi5ipo3kx3j"
 
 [dotnet]
 
 project/assembly_name="After me"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/YATI-72a3716d943b21a9038631fa58821b0ff5517a50/GDScript/addons/YATI/plugin.cfg")
 
 [file_customization]
 
@@ -91,6 +99,7 @@ Reset={
 2d_physics/layer_2="Prota"
 2d_physics/layer_3="Ghosts"
 2d_physics/layer_4="Interactuables"
+2d_physics/layer_5="BloqueInvisibles"
 
 [rendering]
 

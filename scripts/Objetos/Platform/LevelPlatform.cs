@@ -35,9 +35,9 @@ public partial class LevelPlatform : StaticBody2D
 		{
 			MovingPlatform(delta);
 		}
-		if (_topRay.IsColliding() || _rightRay.IsColliding())
+		if ((_topRay.IsColliding() && _goingUp) || _rightRay.IsColliding())
 			_retunning = true;
-		else if (_bottomRay.IsColliding() || _leftRay.IsColliding())
+		else if ((_bottomRay.IsColliding() && _goingUp) || _leftRay.IsColliding())
 			_retunning = false;
 	}
 	private void OnButtonPressed(LevelButton button)
@@ -78,7 +78,6 @@ public partial class LevelPlatform : StaticBody2D
 	{
     	if (body is Prota.Prota prota)
     	    _prota = prota;
-		GD.Print("Prota entró en la plataforma");
 	}
 
 	private void OnBodyExited(Node body)

@@ -28,7 +28,7 @@ public partial class LevelButton : Area2D
 
     public void OnBodyExited(Node2D node)
     {
-        if (!IsPressed && _ocupado != node) return;
+        if (!IsPressed || _ocupado != node) return;
         IsPressed = false;
         _sprite.Play("unpress");
         _ocupado = null;

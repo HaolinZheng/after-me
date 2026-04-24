@@ -4,7 +4,7 @@
 [ext_resource type="FontFile" uid="uid://ch085uvw7anjv" path="res://assets/pixeldu.ttf" id="3_m0xck"]
 [ext_resource type="PackedScene" uid="uid://uih064wu2qmm" path="res://scenes/Objects/Door/door.tscn" id="4_5h52n"]
 [ext_resource type="PackedScene" uid="uid://bu0igsuk823ty" path="res://scenes/Objects/Button/button.tscn" id="5_v177w"]
-[ext_resource type="PackedScene" uid="uid://5fkcds7s5m71" path="res://scenes/Maps/Level 2.tmx" id="6_cijr7"]
+[ext_resource type="PackedScene" uid="uid://c7lvkf88gjld6" path="res://scenes/Maps/Level 2.tmx" id="6_cijr7"]
 [ext_resource type="PackedScene" uid="uid://crrt3ur141nq1" path="res://scenes/Prota/prota.tscn" id="6_vxc0v"]
 [ext_resource type="PackedScene" uid="uid://c0fw6s6t8n7vs" path="res://scenes/Objects/Platform/platform.tscn" id="7_ln7nx"]
 
@@ -55,9 +55,8 @@ position = Vector2(155, 75)
 position = Vector2(55, 75)
 
 [node name="Prota" parent="." unique_id=1319834570 instance=ExtResource("6_vxc0v")]
-position = Vector2(46, 72)
+position = Vector2(25, 75)
 
 [node name="Platform" parent="." unique_id=915921819 node_paths=PackedStringArray("_button") instance=ExtResource("7_ln7nx")]
 position = Vector2(75, 85)
 _button = NodePath("../Button")
-_distance = 10.0

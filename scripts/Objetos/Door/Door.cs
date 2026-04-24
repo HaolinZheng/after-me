@@ -2,6 +2,7 @@ using Godot;
 using System.Collections.Generic;
 using afterMe.scripts.Objetos.Button;
 using afterMe.scripts.Prota;
+using afterMe.scripts.Ghost;
 
 namespace afterMe.scripts.Objetos.Door;
 
@@ -87,7 +88,11 @@ public partial class Door : Area2D
     }
 
     private void ChangeScene()
-    {
-        GetTree().ChangeSceneToFile("res://scenes/Maps/" + _nextScene + ".tscn");
-    }
+{
+    // Limpia las grabaciones al cambiar de nivel
+    var ghostMemory = GetNode<GhostMemory>("/root/GhostMemory");
+    ghostMemory.Clear();
+
+    GetTree().ChangeSceneToFile("res://scenes/Maps/" + _nextScene + ".tscn");
+}
 }

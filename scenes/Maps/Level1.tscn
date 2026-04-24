@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://xevn27y2jyrh"]
 
-[ext_resource type="PackedScene" uid="uid://cslai1c2au0p6" path="res://scenes/Maps/Level 1.tmx" id="1_u3yv4"]
+[ext_resource type="PackedScene" uid="uid://b8bgxhihyja18" path="res://scenes/Maps/Level 1.tmx" id="1_u3yv4"]
 [ext_resource type="PackedScene" uid="uid://crrt3ur141nq1" path="res://scenes/Prota/prota.tscn" id="2_2cr1h"]
 [ext_resource type="PackedScene" uid="uid://cd0rcqax5b26l" path="res://scenes/UI/cronometro.tscn" id="3_7v2t8"]
 [ext_resource type="FontFile" uid="uid://ch085uvw7anjv" path="res://assets/pixeldu.ttf" id="4_m7oxf"]
@@ -54,4 +54,4 @@ position = Vector2(155, 75)
 position = Vector2(65, 75)
 
 [node name="Prota" parent="." unique_id=1319834570 instance=ExtResource("2_2cr1h")]
-position = Vector2(135, 55)
+position = Vector2(25, 75)

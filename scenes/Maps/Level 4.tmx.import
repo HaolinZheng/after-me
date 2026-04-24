@@ -1,0 +1,23 @@
+[remap]
+
+importer="YATI"
+type="PackedScene"
+uid="uid://cr6sqmitofyvk"
+path="res://.godot/imported/Level 4.tmx-73ba1e836cb1117ede32cb6167fb970c.tscn"
+
+[deps]
+
+source_file="res://scenes/Maps/Level 4.tmx"
+dest_files=["res://.godot/imported/Level 4.tmx-73ba1e836cb1117ede32cb6167fb970c.tscn"]
+
+[params]
+
+use_default_filter=false
+add_class_as_metadata=false
+add_id_as_metadata=false
+no_alternative_tiles=false
+map_wangset_to_terrain=false
+custom_data_prefix="data_"
+tiled_project_file=""
+post_processor=""
+save_tileset_to=""
