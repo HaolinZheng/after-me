@@ -41,6 +41,7 @@ physics_material_override = SubResource("PhysicsMaterial_ei6ig")
 script = ExtResource("1_ei6ig")
 _sprite = NodePath("AnimatedSprite2D")
 _collision = NodePath("CollisionShape2D")
+_isOpened = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=977368547]
 texture_filter = 1
