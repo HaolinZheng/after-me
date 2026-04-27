@@ -2,18 +2,25 @@
 
 [ext_resource type="Script" uid="uid://bmdi3jjtj7dgl" path="res://scripts/Prota/Prota.cs" id="1_ociqq"]
 [ext_resource type="PackedScene" uid="uid://cpxbngtdiji3l" path="res://scenes/Ghost/ghost.tscn" id="2_a8mum"]
-[ext_resource type="Texture2D" uid="uid://cjah6ldu0r0r7" path="res://assets/Prota.png" id="3_a8mum"]
+[ext_resource type="Texture2D" uid="uid://baj1j5hsn2meh" path="res://assets/Prota.png" id="3_a8mum"]
 [ext_resource type="Script" uid="uid://b8qwr14kt87c6" path="res://scripts/Prota/InputRecorder.cs" id="3_owpfm"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_a8mum"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_or3b6"]
 atlas = ExtResource("3_a8mum")
 region = Rect2(0, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jpfec"]
+atlas = ExtResource("3_a8mum")
+region = Rect2(10, 0, 10, 10)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ociqq"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_a8mum")
+"texture": SubResource("AtlasTexture_or3b6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jpfec")
 }],
 "loop": true,
 "name": &"default",
@@ -33,7 +40,6 @@ GhostScene = ExtResource("2_a8mum")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=102076353]
 texture_filter = 3
 sprite_frames = SubResource("SpriteFrames_ociqq")
-frame_progress = 0.9835442
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1040059661]
 position = Vector2(0, 0.5)
