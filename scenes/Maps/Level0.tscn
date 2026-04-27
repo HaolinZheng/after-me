@@ -43,9 +43,6 @@ position = Vector2(155, 75)
 [node name="Button" parent="." unique_id=1977466510 groups=["level_buttons"] instance=ExtResource("5_6vysf")]
 position = Vector2(55, 75)
 
-[node name="Prota" parent="." unique_id=1319834570 instance=ExtResource("6_ayvae")]
-position = Vector2(25, 75)
-
 [node name="Button2" parent="." unique_id=114392099 groups=["level_buttons"] instance=ExtResource("5_6vysf")]
 position = Vector2(105, 35)
 
@@ -56,22 +53,20 @@ _button = NodePath("../Button")
 
 [node name="Gate" parent="." unique_id=1891262855 node_paths=PackedStringArray("_button") instance=ExtResource("8_cyfy2")]
 position = Vector2(95, 79)
-_isClosed = true
 _button = NodePath("../Button2")
 
 [node name="Gate2" parent="." unique_id=2069870193 node_paths=PackedStringArray("_button") instance=ExtResource("8_cyfy2")]
 position = Vector2(105, 79)
-_isClosed = true
+_isDisabled = true
 _button = NodePath("../Button2")
 
 [node name="Gate3" parent="." unique_id=1492965749 node_paths=PackedStringArray("_button") instance=ExtResource("8_cyfy2")]
 position = Vector2(115, 79)
-_isClosed = true
+_isDisabled = true
 _button = NodePath("../Button2")
 
 [node name="Gate4" parent="." unique_id=595147724 node_paths=PackedStringArray("_button") instance=ExtResource("8_cyfy2")]
 position = Vector2(125, 79)
-_isClosed = true
 _button = NodePath("../Button2")
 
 [node name="BloqueInvisible" parent="." unique_id=2115850250 instance=ExtResource("9_n48ji")]
@@ -86,3 +81,6 @@ offset_top = 20.0
 offset_right = 30.0
 offset_bottom = 20.0
 _prota = NodePath("../Prota")
+
+[node name="Prota" parent="." unique_id=1319834570 instance=ExtResource("6_ayvae")]
+position = Vector2(25, 75)
