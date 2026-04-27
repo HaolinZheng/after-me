@@ -27,4 +27,4 @@ public partial class Cronometro : Control
     	_label.Text = $"{_maxTime}:00";
 	}
 	}
-}
+}	

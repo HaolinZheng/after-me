@@ -45,21 +45,25 @@ shape = SubResource("RectangleShape2D_ufxmy")
 position = Vector2(0, -4)
 target_position = Vector2(0, 6)
 collision_mask = 17
+collide_with_areas = true
 
 [node name="Top" type="RayCast2D" parent="." unique_id=1154970453]
 position = Vector2(0, -4)
 target_position = Vector2(0, -6)
 collision_mask = 17
+collide_with_areas = true
 
 [node name="Left" type="RayCast2D" parent="." unique_id=1645226029]
 position = Vector2(0, -4)
 target_position = Vector2(-6, 0)
 collision_mask = 17
+collide_with_areas = true
 
 [node name="Right" type="RayCast2D" parent="." unique_id=1771851372]
 position = Vector2(0, -4)
 target_position = Vector2(6, 0)
 collision_mask = 17
+collide_with_areas = true
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1835562095]
 collision_layer = 0

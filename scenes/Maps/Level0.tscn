@@ -8,13 +8,15 @@
 [ext_resource type="PackedScene" uid="uid://crrt3ur141nq1" path="res://scenes/Prota/prota.tscn" id="6_ayvae"]
 [ext_resource type="PackedScene" uid="uid://c0fw6s6t8n7vs" path="res://scenes/Objects/Platform/platform.tscn" id="7_ksahk"]
 [ext_resource type="PackedScene" uid="uid://eyrfwkchaqlj" path="res://scenes/Objects/Gate/gate.tscn" id="8_cyfy2"]
+[ext_resource type="PackedScene" uid="uid://danfj81hok1cj" path="res://scenes/Objects/BloqueInvisible/bloque_invisible.tscn" id="9_n48ji"]
+[ext_resource type="PackedScene" uid="uid://c13ampi1fxfpd" path="res://scenes/UI/Counter.tscn" id="10_6vysf"]
 
 [sub_resource type="Theme" id="Theme_aoy6n"]
 default_font = ExtResource("3_cyfy2")
 
 [node name="Level0" type="Node2D" unique_id=996602970]
 
-[node name="Level 5" parent="." unique_id=2006012977 instance=ExtResource("1_6wtr1")]
+[node name="Level 5" parent="." unique_id=134489062 instance=ExtResource("1_6wtr1")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=92413896]
 position = Vector2(90, 51)
@@ -53,18 +55,19 @@ GA"
 [node name="Door" parent="." unique_id=1887943461 instance=ExtResource("4_n48ji")]
 position = Vector2(155, 75)
 
-[node name="Button" parent="." unique_id=1977466510 instance=ExtResource("5_6vysf")]
+[node name="Button" parent="." unique_id=1977466510 groups=["level_buttons"] instance=ExtResource("5_6vysf")]
 position = Vector2(55, 75)
 
 [node name="Prota" parent="." unique_id=1319834570 instance=ExtResource("6_ayvae")]
-position = Vector2(83, 34)
+position = Vector2(25, 75)
 
-[node name="Button2" parent="." unique_id=114392099 instance=ExtResource("5_6vysf")]
+[node name="Button2" parent="." unique_id=114392099 groups=["level_buttons"] instance=ExtResource("5_6vysf")]
 position = Vector2(105, 35)
 
-[node name="Platform" parent="." unique_id=435290592 instance=ExtResource("7_ksahk")]
+[node name="Platform" parent="." unique_id=435290592 node_paths=PackedStringArray("_button") instance=ExtResource("7_ksahk")]
 position = Vector2(66, 85)
-_distance = 100.0
+_goingUp = true
+_button = NodePath("../Button")
 
 [node name="Gate" parent="." unique_id=1891262855 node_paths=PackedStringArray("_button") instance=ExtResource("8_cyfy2")]
 position = Vector2(95, 79)
@@ -81,3 +84,16 @@ _button = NodePath("../Button2")
 [node name="Gate4" parent="." unique_id=595147724 node_paths=PackedStringArray("_button") instance=ExtResource("8_cyfy2")]
 position = Vector2(125, 79)
 _button = NodePath("../Button2")
+
+[node name="BloqueInvisible" parent="." unique_id=2115850250 instance=ExtResource("9_n48ji")]
+position = Vector2(66, 89)
+
+[node name="BloqueInvisible2" parent="." unique_id=1727110627 instance=ExtResource("9_n48ji")]
+position = Vector2(66, 28)
+
+[node name="Counter" parent="." unique_id=2039292337 node_paths=PackedStringArray("_prota") instance=ExtResource("10_6vysf")]
+offset_left = 30.0
+offset_top = 20.0
+offset_right = 30.0
+offset_bottom = 20.0
+_prota = NodePath("../Prota")

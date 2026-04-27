@@ -10,28 +10,34 @@ public partial class LevelButton : Area2D
     public bool IsPressed { get; private set; } = false;
 
     private AnimatedSprite2D _sprite;
-    private Node2D _ocupado = null;
+    private int _bodiesOnButton = 0; // cuenta cuántos cuerpos hay encima
 
     public override void _Ready()
     {
         _sprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
     }
 
-    public void OnBodyEntered(Node2D node)
+    public void OnBodyEntered(Node2D body)
     {
-        if (IsPressed) return;
-        _ocupado = node;
-        IsPressed = true;
-        _sprite.Play("press");
-        EmitSignal(SignalName.ButtonPressed, this);
+        _bodiesOnButton++;
+
+        if (!IsPressed)
+        {
+            IsPressed = true;
+            _sprite.Play("press");
+            EmitSignal(SignalName.ButtonPressed, this);
+            GD.Print("Button pressed! Bodies on button: " + _bodiesOnButton);
+        }
     }
 
-    public void OnBodyExited(Node2D node)
+    public void OnBodyExited(Node2D body)
     {
-        if (!IsPressed || _ocupado != node) return;
-        IsPressed = false;
-        _sprite.Play("unpress");
-        _ocupado = null;
-        EmitSignal(SignalName.ButtonReleased, this);
+        _bodiesOnButton--;
+        if (_bodiesOnButton == 0 && IsPressed)
+        {
+            IsPressed = false;
+            _sprite.Play("unpress");
+            EmitSignal(SignalName.ButtonReleased, this);
+        }
     }
 }

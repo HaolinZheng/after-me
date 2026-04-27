@@ -42,6 +42,7 @@ public partial class Door : Area2D
     {
         // Busca todos los nodos LevelButton en la escena
         var allButtons = GetTree().GetNodesInGroup("level_buttons");
+        GD.Print("Found " + allButtons.Count + " buttons in the scene.");
         foreach (Node node in allButtons)
         {
             if (node is LevelButton btn)
