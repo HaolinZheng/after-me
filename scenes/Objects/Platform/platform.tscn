@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://c0fw6s6t8n7vs"]
+
+[ext_resource type="Texture2D" uid="uid://gsxyryd15g5v" path="res://assets/Objects/Platform/Platform.png" id="1_36aia"]
+[ext_resource type="Script" uid="uid://dbjv2enespl72" path="res://scripts/Objetos/Platform/LevelPlatform.cs" id="1_vin2h"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_36aia"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vin2h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_36aia")
+}],
+"loop": true,
+"name": &"active",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ufxmy"]
+size = Vector2(10, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vin2h"]
+size = Vector2(10, 1)
+
+[node name="Platform" type="StaticBody2D" unique_id=435290592 node_paths=PackedStringArray("_topRay", "_bottomRay", "_leftRay", "_rightRay")]
+collision_mask = 0
+physics_material_override = SubResource("PhysicsMaterial_36aia")
+script = ExtResource("1_vin2h")
+_distance = 10.0
+_topRay = NodePath("Top")
+_bottomRay = NodePath("Bottom")
+_leftRay = NodePath("Left")
+_rightRay = NodePath("Right")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=977368547]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_vin2h")
+animation = &"active"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=632351036]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_ufxmy")
+
+[node name="Bottom" type="RayCast2D" parent="." unique_id=1756279848]
+position = Vector2(0, -4)
+target_position = Vector2(0, 6)
+collision_mask = 17
+collide_with_areas = true
+
+[node name="Top" type="RayCast2D" parent="." unique_id=1154970453]
+position = Vector2(0, -4)
+target_position = Vector2(0, -6)
+collision_mask = 17
+collide_with_areas = true
+
+[node name="Left" type="RayCast2D" parent="." unique_id=1645226029]
+position = Vector2(0, -4)
+target_position = Vector2(-6, 0)
+collision_mask = 17
+collide_with_areas = true
+
+[node name="Right" type="RayCast2D" parent="." unique_id=1771851372]
+position = Vector2(0, -4)
+target_position = Vector2(6, 0)
+collision_mask = 17
+collide_with_areas = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1835562095]
+collision_layer = 0
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1271691005]
+position = Vector2(0, -5.5)
+shape = SubResource("RectangleShape2D_vin2h")
+debug_color = Color(0.5272361, 0.57247734, 1.92523e-07, 0.41960785)
+
+[connection signal="body_entered" from="Area2D" to="." method="OnBodyEntered"]
+[connection signal="body_exited" from="Area2D" to="." method="OnBodyExited"]
