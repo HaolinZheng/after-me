@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://n0k273jyk1ll"]
+[gd_scene format=3 uid="uid://b6vn2vcn5jt42"]
 
-[ext_resource type="PackedScene" uid="uid://cp44b5mpp7s2i" path="res://scenes/Maps/Level 5.tmx" id="1_kb12c"]
+[ext_resource type="PackedScene" uid="uid://caovywc0ih2ux" path="res://scenes/Maps/Level 5.tmx" id="1_kb12c"]
 [ext_resource type="PackedScene" uid="uid://cd0rcqax5b26l" path="res://scenes/UI/cronometro.tscn" id="2_gxsl4"]
 [ext_resource type="FontFile" uid="uid://ch085uvw7anjv" path="res://assets/pixeldu.ttf" id="3_hqk42"]
 [ext_resource type="PackedScene" uid="uid://uih064wu2qmm" path="res://scenes/Objects/Door/door.tscn" id="4_qoo3k"]

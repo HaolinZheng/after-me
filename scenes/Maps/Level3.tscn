@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://8uy6mjuskw2n"]
+[gd_scene format=3 uid="uid://cxar3l5it5jjv"]
 
 [ext_resource type="PackedScene" uid="uid://dgwlss7t3dnw7" path="res://scenes/Maps/Level 3.tmx" id="1_qap6u"]
 [ext_resource type="PackedScene" uid="uid://cd0rcqax5b26l" path="res://scenes/UI/cronometro.tscn" id="2_lx165"]
@@ -13,7 +13,7 @@ default_font = ExtResource("3_iexcm")
 
 [node name="Level3" type="Node2D" unique_id=996602970]
 
-[node name="Level 3" parent="." unique_id=2022367857 instance=ExtResource("1_qap6u")]
+[node name="Level 3" parent="." unique_id=1911537651 instance=ExtResource("1_qap6u")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=92413896]
 position = Vector2(90, 51)

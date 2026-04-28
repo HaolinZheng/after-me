@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c27vw3ohqewrd"]
+[gd_scene format=3 uid="uid://bixntf1vdrtds"]
 
 [ext_resource type="PackedScene" uid="uid://cp44b5mpp7s2i" path="res://scenes/Maps/Level 5.tmx" id="1_6wtr1"]
 [ext_resource type="PackedScene" uid="uid://cd0rcqax5b26l" path="res://scenes/UI/cronometro.tscn" id="2_ksahk"]
@@ -43,7 +43,10 @@ position = Vector2(155, 75)
 [node name="Button" parent="." unique_id=1977466510 groups=["level_buttons"] instance=ExtResource("5_6vysf")]
 position = Vector2(55, 75)
 
-[node name="Button2" parent="." unique_id=114392099 groups=["level_buttons"] instance=ExtResource("5_6vysf")]
+[node name="Prota" parent="." unique_id=1319834570 instance=ExtResource("6_ayvae")]
+position = Vector2(25, 75)
+
+[node name="Button2" parent="." unique_id=114392099 instance=ExtResource("5_6vysf")]
 position = Vector2(105, 35)
 
 [node name="Platform" parent="." unique_id=435290592 node_paths=PackedStringArray("_button") instance=ExtResource("7_ksahk")]

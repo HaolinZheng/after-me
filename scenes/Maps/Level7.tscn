@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://cmnugsl6uyw4j"]
+
+[ext_resource type="PackedScene" uid="uid://fmhb5cbfgnle" path="res://scenes/Maps/Level 7.tmx" id="1_v67p2"]
+[ext_resource type="PackedScene" uid="uid://cd0rcqax5b26l" path="res://scenes/UI/cronometro.tscn" id="2_iru7p"]
+[ext_resource type="FontFile" uid="uid://ch085uvw7anjv" path="res://assets/pixeldu.ttf" id="3_aq5h4"]
+[ext_resource type="PackedScene" uid="uid://uih064wu2qmm" path="res://scenes/Objects/Door/door.tscn" id="4_mjwfj"]
+[ext_resource type="PackedScene" uid="uid://bu0igsuk823ty" path="res://scenes/Objects/Button/button.tscn" id="5_rhwtp"]
+[ext_resource type="PackedScene" uid="uid://crrt3ur141nq1" path="res://scenes/Prota/prota.tscn" id="6_grlpf"]
+[ext_resource type="PackedScene" uid="uid://eyrfwkchaqlj" path="res://scenes/Objects/Gate/gate.tscn" id="7_k3qfw"]
+
+[sub_resource type="Theme" id="Theme_aoy6n"]
+default_font = ExtResource("3_aq5h4")
+
+[node name="Level7" type="Node2D" unique_id=996602970]
+
+[node name="Level 7" parent="." unique_id=1264276231 instance=ExtResource("1_v67p2")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=92413896]
+position = Vector2(90, 51)
+zoom = Vector2(6.5, 6.5)
+
+[node name="GhostContainer" type="Node" parent="." unique_id=610578012]
+
+[node name="Cronometro" parent="." unique_id=604631755 node_paths=PackedStringArray("_prota") instance=ExtResource("2_iru7p")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 80.0
+offset_top = 20.0
+offset_right = 80.0
+offset_bottom = 20.0
+grow_horizontal = 1
+grow_vertical = 1
+_prota = NodePath("../Prota")
+_maxTime = 10
+
+[node name="CanvasGroup" type="CanvasGroup" parent="." unique_id=865134521]
+position = Vector2(40, 49)
+scale = Vector2(0.4, 0.5)
+
+[node name="Label" type="Label" parent="CanvasGroup" unique_id=1958033265]
+texture_filter = 3
+offset_left = 2.4999967
+offset_top = -74.0
+offset_right = 25.499996
+offset_bottom = -58.0
+theme = SubResource("Theme_aoy6n")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "07"
+
+[node name="Prota" parent="." unique_id=1319834570 instance=ExtResource("6_grlpf")]
+position = Vector2(25, 35)
+
+[node name="Gate" parent="." unique_id=1891262855 node_paths=PackedStringArray("_button") instance=ExtResource("7_k3qfw")]
+position = Vector2(65, 39)
+_button = NodePath("../Button")
+
+[node name="Gate2" parent="." unique_id=1539307940 node_paths=PackedStringArray("_button") instance=ExtResource("7_k3qfw")]
+position = Vector2(75, 39)
+_button = NodePath("../Button")
+
+[node name="Gate3" parent="." unique_id=1875423678 node_paths=PackedStringArray("_button") instance=ExtResource("7_k3qfw")]
+position = Vector2(85, 39)
+_button = NodePath("../Button")
+
+[node name="Button" parent="." unique_id=1887943461 instance=ExtResource("5_rhwtp")]
+position = Vector2(25, 75)
+
+[node name="Gate4" parent="." unique_id=326636649 node_paths=PackedStringArray("_button") instance=ExtResource("7_k3qfw")]
+position = Vector2(85, 79)
+_button = NodePath("../Button2")
+
+[node name="Gate5" parent="." unique_id=81290470 node_paths=PackedStringArray("_button") instance=ExtResource("7_k3qfw")]
+position = Vector2(95, 79)
+_button = NodePath("../Button2")
+
+[node name="Gate6" parent="." unique_id=1894298161 node_paths=PackedStringArray("_button") instance=ExtResource("7_k3qfw")]
+position = Vector2(105, 79)
+_button = NodePath("../Button2")
+
+[node name="Gate7" parent="." unique_id=2030153296 node_paths=PackedStringArray("_button") instance=ExtResource("7_k3qfw")]
+position = Vector2(115, 79)
+_button = NodePath("../Button2")
+
+[node name="Button2" parent="." unique_id=120233199 instance=ExtResource("5_rhwtp")]
+position = Vector2(115, 35)
+
+[node name="Door" parent="." unique_id=1994732434 instance=ExtResource("4_mjwfj")]
+position = Vector2(155, 75)
