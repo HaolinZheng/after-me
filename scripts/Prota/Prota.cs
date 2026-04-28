@@ -11,6 +11,7 @@ public partial class Prota : CharacterBody2D
     [Export] public float Gravity = 980f;
     [Export] public float RespawnTime = 10.0f;
     [Export] public float ActionDelay = 0.5f;
+    [Export] public int maxGhosts = 2;
     [Export] public PackedScene GhostScene;
 
     [Signal] public delegate void PlayerStartedMovingEventHandler();
@@ -94,8 +95,8 @@ public partial class Prota : CharacterBody2D
             // Guarda la grabación actual en el singleton antes de resetear
             if (_recorder.IsRecording)
                 _ghostMemory.AddRecording(_recorder.GetRecordingCopy(), _startPosition);
-
-            ResetPlayer();
+            if (maxGhosts > 0)
+                ResetPlayer();
         }
     }
 
@@ -131,6 +132,7 @@ public partial class Prota : CharacterBody2D
 
     private void ResetPlayer()
     {
+        maxGhosts = Mathf.Max(0, maxGhosts - 1); // Reduce el número de ghosts permitidos para el próximo run
         GlobalPosition = _startPosition;
         _velocity = Vector2.Zero;
         Velocity = Vector2.Zero;
@@ -140,7 +142,6 @@ public partial class Prota : CharacterBody2D
 
         // Destruye ghosts viejos y recrea todos con las grabaciones acumuladas
         RespawnAllGhosts();
-
         StartActionTimer();
     }
 
@@ -148,5 +149,9 @@ public partial class Prota : CharacterBody2D
     {
         if (_respawnTimer == null) return 0;
         return _respawnTimer.TimeLeft;
+    }
+    public int GetRemainingGhosts()
+    {
+        return maxGhosts;
     }
 }

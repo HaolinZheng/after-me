@@ -55,3 +55,4 @@ position = Vector2(65, 75)
 
 [node name="Prota" parent="." unique_id=1319834570 instance=ExtResource("2_2cr1h")]
 position = Vector2(25, 75)
+maxGhosts = 1

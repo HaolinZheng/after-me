@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cxar3l5it5jjv"]
 
-[ext_resource type="PackedScene" uid="uid://b6bbr2o4qgl4l" path="res://scenes/Maps/Level 3.tmx" id="1_qap6u"]
+[ext_resource type="PackedScene" uid="uid://dgwlss7t3dnw7" path="res://scenes/Maps/Level 3.tmx" id="1_qap6u"]
 [ext_resource type="PackedScene" uid="uid://cd0rcqax5b26l" path="res://scenes/UI/cronometro.tscn" id="2_lx165"]
 [ext_resource type="FontFile" uid="uid://ch085uvw7anjv" path="res://assets/pixeldu.ttf" id="3_iexcm"]
 [ext_resource type="PackedScene" uid="uid://uih064wu2qmm" path="res://scenes/Objects/Door/door.tscn" id="4_1qlst"]
@@ -59,4 +59,5 @@ position = Vector2(25, 75)
 
 [node name="Gate" parent="." unique_id=1891262855 node_paths=PackedStringArray("_button") instance=ExtResource("7_lx165")]
 position = Vector2(95, 69)
+_isDisabled = true
 _button = NodePath("../Button")

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b3ke1y1hvddun"]
 
-[ext_resource type="PackedScene" uid="uid://cr6sqmitofyvk" path="res://scenes/Maps/Level 4.tmx" id="1_3np7a"]
+[ext_resource type="PackedScene" uid="uid://c14werm3wi4t4" path="res://scenes/Maps/Level 4.tmx" id="1_3np7a"]
 [ext_resource type="PackedScene" uid="uid://cd0rcqax5b26l" path="res://scenes/UI/cronometro.tscn" id="2_8ougo"]
 [ext_resource type="FontFile" uid="uid://ch085uvw7anjv" path="res://assets/pixeldu.ttf" id="3_tajnm"]
 [ext_resource type="PackedScene" uid="uid://uih064wu2qmm" path="res://scenes/Objects/Door/door.tscn" id="4_rs56h"]
@@ -14,7 +14,7 @@ default_font = ExtResource("3_tajnm")
 
 [node name="Level4" type="Node2D" unique_id=996602970]
 
-[node name="Level 4" parent="." unique_id=210587899 instance=ExtResource("1_3np7a")]
+[node name="Level 4" parent="." unique_id=96544320 instance=ExtResource("1_3np7a")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=92413896]
 position = Vector2(90, 51)
@@ -63,16 +63,20 @@ position = Vector2(105, 75)
 
 [node name="Gate" parent="." unique_id=1891262855 node_paths=PackedStringArray("_button") instance=ExtResource("7_tajnm")]
 position = Vector2(65, 79)
+_isDisabled = true
 _button = NodePath("../Button")
 
 [node name="Gate2" parent="." unique_id=1685208830 node_paths=PackedStringArray("_button") instance=ExtResource("7_tajnm")]
 position = Vector2(75, 79)
+_isDisabled = true
 _button = NodePath("../Button")
 
 [node name="Gate3" parent="." unique_id=1950777025 node_paths=PackedStringArray("_button") instance=ExtResource("7_tajnm")]
 position = Vector2(85, 79)
+_isDisabled = true
 _button = NodePath("../Button")
 
-[node name="Platform" parent="." unique_id=435290592 instance=ExtResource("8_rs56h")]
-position = Vector2(125, 85)
+[node name="Platform" parent="." unique_id=435290592 node_paths=PackedStringArray("_button") instance=ExtResource("8_rs56h")]
+position = Vector2(125, 86)
 _goingUp = true
+_button = NodePath("../Button2")

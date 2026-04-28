@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://c13ampi1fxfpd"]
+
+[ext_resource type="Script" uid="uid://c1cluxbjhro3n" path="res://scripts/UI/Counter.cs" id="1_3jo6w"]
+[ext_resource type="Texture2D" uid="uid://4v2yuii3k14l" path="res://assets/Counter.png" id="2_5a7xg"]
+[ext_resource type="FontFile" uid="uid://ch085uvw7anjv" path="res://assets/pixeldu.ttf" id="3_oskjh"]
+
+[sub_resource type="Theme" id="Theme_copc0"]
+default_font = ExtResource("3_oskjh")
+
+[node name="Counter" type="Control" unique_id=604631755 node_paths=PackedStringArray("_label")]
+texture_filter = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1112.0
+offset_bottom = -638.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3jo6w")
+_label = NodePath("Sprite2D/Panel/Label2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1917219093]
+texture_filter = 3
+position = Vector2(20, 5)
+texture = ExtResource("2_5a7xg")
+
+[node name="Panel" type="HBoxContainer" parent="Sprite2D" unique_id=609318385]
+texture_filter = 3
+offset_left = -19.0
+offset_top = -3.525
+offset_right = 89.57143
+offset_bottom = 17.746428
+scale = Vector2(0.35, 0.35)
+
+[node name="Panel" type="Panel" parent="Sprite2D/Panel" unique_id=1001592647]
+layout_mode = 2
+
+[node name="Panel2" type="Panel" parent="Sprite2D/Panel" unique_id=1542442904]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Sprite2D/Panel" unique_id=730182121]
+texture_filter = 3
+layout_mode = 2
+theme = SubResource("Theme_copc0")
+text = "Clones:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Sprite2D/Panel" unique_id=455312251]
+texture_filter = 3
+layout_mode = 2
+theme = SubResource("Theme_copc0")
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1

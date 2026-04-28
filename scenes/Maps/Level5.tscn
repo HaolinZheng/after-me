@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://uih064wu2qmm" path="res://scenes/Objects/Door/door.tscn" id="4_qoo3k"]
 [ext_resource type="PackedScene" uid="uid://bu0igsuk823ty" path="res://scenes/Objects/Button/button.tscn" id="5_v7jiw"]
 [ext_resource type="PackedScene" uid="uid://crrt3ur141nq1" path="res://scenes/Prota/prota.tscn" id="6_i4618"]
+[ext_resource type="PackedScene" uid="uid://c0fw6s6t8n7vs" path="res://scenes/Objects/Platform/platform.tscn" id="7_qoo3k"]
+[ext_resource type="PackedScene" uid="uid://eyrfwkchaqlj" path="res://scenes/Objects/Gate/gate.tscn" id="8_v7jiw"]
+[ext_resource type="PackedScene" uid="uid://danfj81hok1cj" path="res://scenes/Objects/BloqueInvisible/bloque_invisible.tscn" id="9_i4618"]
 
 [sub_resource type="Theme" id="Theme_aoy6n"]
 default_font = ExtResource("3_hqk42")
@@ -48,13 +51,45 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "05"
 
 [node name="Door" parent="." unique_id=1887943461 instance=ExtResource("4_qoo3k")]
+visible = false
 position = Vector2(155, 75)
 
-[node name="Button" parent="." unique_id=1977466510 instance=ExtResource("5_v7jiw")]
+[node name="Button" parent="." unique_id=1977466510 groups=["level_buttons"] instance=ExtResource("5_v7jiw")]
 position = Vector2(55, 75)
 
 [node name="Prota" parent="." unique_id=1319834570 instance=ExtResource("6_i4618")]
-position = Vector2(46, 72)
+position = Vector2(25, 75)
 
-[node name="Button2" parent="." unique_id=114392099 instance=ExtResource("5_v7jiw")]
+[node name="Button2" parent="." unique_id=114392099 groups=["level_buttons"] instance=ExtResource("5_v7jiw")]
 position = Vector2(105, 35)
+
+[node name="Platform" parent="." unique_id=435290592 node_paths=PackedStringArray("_button") instance=ExtResource("7_qoo3k")]
+position = Vector2(66, 85)
+_goingUp = true
+_button = NodePath("../Button")
+
+[node name="Gate" parent="." unique_id=1891262855 node_paths=PackedStringArray("_button") instance=ExtResource("8_v7jiw")]
+position = Vector2(95, 79)
+_isDisabled = true
+_button = NodePath("../Button2")
+
+[node name="Gate2" parent="." unique_id=1645747503 node_paths=PackedStringArray("_button") instance=ExtResource("8_v7jiw")]
+position = Vector2(105, 79)
+_isDisabled = true
+_button = NodePath("../Button2")
+
+[node name="Gate3" parent="." unique_id=507421684 node_paths=PackedStringArray("_button") instance=ExtResource("8_v7jiw")]
+position = Vector2(115, 79)
+_isDisabled = true
+_button = NodePath("../Button2")
+
+[node name="Gate4" parent="." unique_id=497144467 node_paths=PackedStringArray("_button") instance=ExtResource("8_v7jiw")]
+position = Vector2(125, 79)
+_isDisabled = true
+_button = NodePath("../Button2")
+
+[node name="BloqueInvisible" parent="." unique_id=2115850250 instance=ExtResource("9_i4618")]
+position = Vector2(66, 89)
+
+[node name="BloqueInvisible2" parent="." unique_id=67521748 instance=ExtResource("9_i4618")]
+position = Vector2(66, 28)
